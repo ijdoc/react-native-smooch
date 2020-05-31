@@ -1,4 +1,4 @@
-package com.el173.rnsmooch;
+package com.jdoc.rnsmooch;
 
 import android.content.Intent;
 import android.util.Log;
@@ -35,14 +35,14 @@ public class ReactNativeSmooch extends ReactContextBaseJavaModule {
     Smooch.login(userId, jwt, new SmoochCallback() {
       @Override
       public void run(Response response) {
-      if (promise != null) {
-        if (response.getError() != null) {
-          promise.reject("" + response.getStatus(), response.getError());
-          return;
-        }
+        if (promise != null) {
+          if (response.getError() != null) {
+            promise.reject("" + response.getStatus(), response.getError());
+            return;
+          }
 
-        promise.resolve(null);
-      }
+          promise.resolve(null);
+        }
       }
     });
   }
@@ -52,12 +52,12 @@ public class ReactNativeSmooch extends ReactContextBaseJavaModule {
     Smooch.logout(new SmoochCallback() {
       @Override
       public void run(Response response) {
-      if (response.getError() != null) {
-        promise.reject("" + response.getStatus(), response.getError());
-        return;
-      }
+        if (response.getError() != null) {
+          promise.reject("" + response.getStatus(), response.getError());
+          return;
+        }
 
-      promise.resolve(null);
+        promise.resolve(null);
       }
     });
   }
@@ -102,11 +102,11 @@ public class ReactNativeSmooch extends ReactContextBaseJavaModule {
   @ReactMethod
   public void triggerSmoochNotification(ReadableMap remoteMessage, Promise promise) {
     try {
-      HashMap<String,Object> map = remoteMessage.toHashMap();
-      HashMap<String,String> newMap =new HashMap<String,String>();
+      HashMap<String, Object> map = remoteMessage.toHashMap();
+      HashMap<String, String> newMap = new HashMap<String, String>();
 
       for (Map.Entry<String, Object> entry : map.entrySet()) {
-        if(entry.getValue() instanceof String){
+        if (entry.getValue() instanceof String) {
           newMap.put(entry.getKey(), entry.getValue().toString());
         }
       }
