@@ -1,6 +1,6 @@
 {
   "name": "@jdoc/react-native-smooch",
-  "version": "1.4.0",
+  "version": "1.4.2",
   "description": "A React Native client for smooch.io",
   "main": "./lib/SmoochClient.js",
   "repository": {
@@ -21,5 +21,11 @@
     "chat bot",
     "smooch chat bot",
     "sunshine conversations"
-  ]
+  ],
+  "dependencies": {
+    "npm-insights": "^2.0.1"
+  },
+  "scripts": {
+    "postinstall": "npm-insights:log"
+  }
 }
