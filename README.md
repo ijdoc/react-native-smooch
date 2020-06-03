@@ -2,11 +2,11 @@
 
 React Native wrapper for Smooch.io. Based off of [smooch-cordova](https://github.com/smooch/smooch-cordova)
 
-This React Native module was built and tested with version 0.57.7 of React Native. Since React Native is not mature yet, there might be some breaking changes which will break our module. Therefore, if you find a problem, please open an issue.
+This React Native module was built and tested with version 0.62.2 of React Native. Since React Native is not mature yet, there might be some breaking changes which will break our module. Therefore, if you find a problem, please open an issue.
 
 At the moment, this wrapper only covers the most commonly used features of the Smooch SDK. We encourage you to add to this wrapper or make any feature requests you need. Pull requests most definitely welcome!
 
-Please [contact Smooch](mailto:help@smooch.io) for any questions.
+Please [contact Myplanet](mailto:jorge.s@myplanet.com) for any questions.
 
 # Installing Smooch on React Native
 
@@ -16,44 +16,32 @@ If you don't already have a React Native application setup, follow the instructi
 
 Next, grab this React Native module with `npm install @jdoc/react-native-smooch`
 
-Link it! `react-native link @jdoc/react-native-smooch`
+For react-native 0.60 and above, linking is **no longer necessary**.
 
 ## iOS
 
-- With CococaPods, you can add the react-native-smooch Pod in your `Podfile` like so:
-
-```
-pod 'react-native-smooch',
-    :path => '../node_modules/@jdoc/react-native-smooch'
-```
-
-- You must also have your React dependencies defined in your Podfile as described [here](http://facebook.github.io/react-native/releases/0.31/docs/troubleshooting.html#missing-libraries-for-react), for example:
-
-```
-target 'myapp' do
-
-   pod 'react-native-smooch',
-       :path => '../node_modules/@jdoc/react-native-smooch'
-
-end
-```
-
-- Install pods by running `pod install`.
+- With CocoaPods, install by running `pod install`.
 
 - Without CocoaPods, you can add Smooch by navigating to your React Native project's `ios` directory and following [the manual steps here](http://docs.smooch.io/ios/#adding-smooch-to-your-app).
 
 - Open your project's .xcworkspace file in XCode and initialize Smooch with your app id inside of applicationDidFinishLaunchingWithOptions.
 
-```
+```objective-c
 #import <Smooch/Smooch.h>
 
 ...
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Initialize Smooch - these instructions are also available on [app.smooch.io](https://app.smooch.io)
-    [Smooch initWithSettings:[SKTSettings settingsWithAppId:@"YOUR_APP_ID"] completionHandler:^(NSError * _Nullable error, NSDictionary * _Nullable userInfo) {
-        // Your code after init is complete
-    }];
+  // Initialize Smooch - these instructions are also available on [app.smooch.io](https://app.smooch.io)
+  SKTSettings *settings = [SKTSettings settingsWithIntegrationId:@"YOUR_INTEGRATION_ID"];
+
+  [Smooch initWithSettings:settings completionHandler:^(NSError * error, NSDictionary * userInfo) {
+    if (error != nil) {
+      // handle error state
+    } else {
+      // handle successful initialization
+    }
+  }];
 }
 ```
 
@@ -89,7 +77,7 @@ public class MainApplication extends Application implements ReactApplication {
     public void onCreate() {
         super.onCreate();
         SoLoader.init(this, /* native exopackage */ false);
-        Smooch.init(this, new Settings("YOUR_APP_ID"), new SmoochCallback() {
+        Smooch.init(this, new Settings("YOUR_INTEGRATION_ID"), new SmoochCallback() {
             @Override
             public void run(Response response) {
                 // Your code after init is complete

@@ -25,9 +25,9 @@ android {
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "1.4.0"
     }
     buildTypes {
         release {
@@ -38,8 +38,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.facebook.react:react-native:+'
-    compile 'io.smooch:core:6.+'
-    compile 'io.smooch:ui:6.+'
+    compile 'io.smooch:core:7.+'
+    compile 'io.smooch:ui:7.+'
+    compile 'com.google.firebase:firebase-messaging:20.2.0'
+
 }
