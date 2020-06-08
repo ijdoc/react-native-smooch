@@ -1,13 +1,13 @@
 {
   "name": "@jdoc/react-native-smooch",
   "version": "1.4.4",
-  "description": "A React Native client for smooch.io",
+  "description": "A React Native client for Sunshine Conversations (smooch.io)",
   "main": "./lib/SmoochClient.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ijdoc/react-native-smooch.git"
   },
-  "author": "Hashith Karunarathne",
+  "author": "Jorge Silva @Myplanet",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ijdoc/react-native-smooch/issues"
@@ -20,6 +20,8 @@
     "bot",
     "chat bot",
     "smooch chat bot",
-    "sunshine conversations"
+    "sunshine conversations",
+    "multi-party",
+    "multiparty"
   ]
 }
