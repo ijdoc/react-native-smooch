@@ -1,6 +1,6 @@
 {
   "name": "@jdoc/react-native-smooch",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "A React Native client for smooch.io",
   "main": "./lib/SmoochClient.js",
   "repository": {

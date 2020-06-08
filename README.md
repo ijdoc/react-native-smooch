@@ -107,7 +107,14 @@ Smooch.show();
 ### Get appUserId
 
 ```javascript
-let appUserId = Smooch.getAppUserId();
+async function getAppUserId() {
+  try {
+    var appUserId = await Smooch.getAppUserId();
+    console.log(`*** appUserId: ${appUserId}`);
+  } catch (e) {
+    console.error(e);
+  }
+}
 ```
 
 ### Set the fcm token

@@ -83,8 +83,9 @@ public class ReactNativeSmooch extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public String getAppUserId() {
-    return User.getCurrentUser().getAppUserId().toString();
+  public void getAppUserId(Promise promise) {
+    String appUserId = User.getCurrentUser().getAppUserId().toString();
+    promise.resolve(appUserId);
   }
 
   @ReactMethod
