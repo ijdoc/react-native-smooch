@@ -83,6 +83,11 @@ public class ReactNativeSmooch extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public String getAppUserId() {
+    return User.getCurrentUser().getAppUserId().toString();
+  }
+
+  @ReactMethod
   public void setFirstName(String firstName) {
     User.getCurrentUser().setFirstName(firstName);
   }

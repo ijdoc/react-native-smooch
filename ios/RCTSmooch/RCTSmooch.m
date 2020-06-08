@@ -70,11 +70,11 @@ RCT_EXPORT_METHOD(setUserProperties:(NSDictionary*)options) {
     [[SKTUser currentUser] addProperties:options];
 };
 
-RCT_EXPORT_METHOD(getUserId:(RCTPromiseResolveBlock)resolve
+RCT_EXPORT_METHOD(getAppUserId:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject) {
-    NSLog(@"Smooch getUserId");
+    NSLog(@"Smooch getAppUserId");
     
-    resolve([SKTUser currentUser].userId);
+    resolve([SKTUser currentUser].appUserId);
 };
 
 RCT_REMAP_METHOD(getUnreadCount,

@@ -104,6 +104,12 @@ import Smooch from "@jdoc/react-native-smooch";
 Smooch.show();
 ```
 
+### Get appUserId
+
+```javascript
+let appUserId = Smooch.getAppUserId();
+```
+
 ### Set the fcm token
 
 ```javascript
