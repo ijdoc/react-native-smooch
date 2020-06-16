@@ -14,7 +14,7 @@ First, make sure you've [signed up for Smooch](https://app.smooch.io/signup)
 
 If you don't already have a React Native application setup, follow the instructions [here](https://facebook.github.io/react-native/docs/getting-started.html) to create one.
 
-Next, grab this React Native module with `npm install @jdoc/react-native-smooch`
+Next, grab this React Native module with `npm install @myplanet/react-native-smooch`
 
 For react-native 0.60 and above, linking is **no longer necessary**.
 
@@ -95,7 +95,7 @@ You're now ready to start interacting with Smooch in your React Native app.
 ### Require the module
 
 ```javascript
-import Smooch from "@jdoc/react-native-smooch";
+import Smooch from "@myplanet/react-native-smooch";
 ```
 
 ### Show the conversation screen

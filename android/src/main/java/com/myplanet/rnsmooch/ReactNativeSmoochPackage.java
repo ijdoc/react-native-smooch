@@ -1,4 +1,4 @@
-package com.jdoc.rnsmooch;
+package com.myplanet.rnsmooch;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;

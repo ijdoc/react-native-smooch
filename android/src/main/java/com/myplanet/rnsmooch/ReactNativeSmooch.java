@@ -1,4 +1,4 @@
-package com.jdoc.rnsmooch;
+package com.myplanet.rnsmooch;
 
 import android.content.Intent;
 import android.util.Log;
@@ -84,7 +84,11 @@ public class ReactNativeSmooch extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void getAppUserId(Promise promise) {
-    String appUserId = User.getCurrentUser().getAppUserId().toString();
+    String appUserId = "undefined";
+    try {
+      appUserId = User.getCurrentUser().getAppUserId().toString();
+    } catch (NullPointerException e) {
+    }
     promise.resolve(appUserId);
   }
 
